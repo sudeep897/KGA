@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="description" content="Contact Kinder Garden Academy – a modern international school in Sanfehatbazzar, Achham, Nepal. Reach out via phone, email, or visit us." />
+  <title>Contact Us - Kinder Garden Academy | International School Achham</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ 
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader" class="preloader">
+    <div class="flex flex-col items-center gap-4">
+      <div class="loader-ring"></div>
+      <img src="Image/Logo.png" alt="Kinder Garden Academy" class="w-16 h-16 object-contain">
+      <p class="text-sm text-gray-500 font-medium tracking-wide">Loading contact...</p>
+    </div>
+  </div>
+
+  <!-- Top Contact Bar (transparent initially) -->
+  <div id="topContactBar" class="top-contact-bar fixed top-0 left-0 w-full z-[70] py-2.5 px-4 md:px-8 text-xs md:text-sm">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center md:justify-end gap-x-5 gap-y-1">
+      <a href="#" class="flex items-center gap-1.5 transition">
+        <i class="fas fa-map-marker-alt contact-icon text-sm"></i> Sanfehatbazzar-03, Achham, Nepal
+      </a>
+      <span class="hidden sm:block w-px h-4 bg-white/30 transition-all duration-400" id="barDivider1"></span>
+      <a href="tel:+977091522599" class="flex items-center gap-1.5 transition">
+        <i class="fas fa-phone-alt contact-icon text-sm"></i> +977-097-625139
+      </a>
+      <span class="hidden sm:block w-px h-4 bg-white/30 transition-all duration-400" id="barDivider2"></span>
+      <a href="mailto:infokindergardenacademy@gmail.com" class="flex items-center gap-1.5 transition">
+        <i class="fas fa-envelope contact-icon text-sm"></i> infokindergardenacademy@gmail.com
+      </a>
+    </div>
+  </div>
+
+  <!-- Navigation (transparent initially) -->
+  <nav id="navbar" class="navbar fixed w-full z-50 py-4 px-6 md:px-10 transition-all duration-500" style="top: 40px;">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="Image/Logo.png" alt="Logo" class="h-12 w-12 md:h-14 md:w-14 object-contain drop-shadow-lg transition-transform duration-400 hover:scale-105">
+        <span id="logoText" class="text-xl md:text-2xl font-bold text-white transition-colors duration-300">Kinder Garden Academy</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link text-white/90 hover:text-white font-medium transition-colors duration-300">Home</a>
+        <a href="programs.html" class="nav-link text-white/90 hover:text-white font-medium transition-colors duration-300">Programs</a>
+        <a href="teams.html" class="nav-link text-white/90 hover:text-white font-medium transition-colors duration-300">Our Team</a>
+        <a href="gallery.html" class="nav-link text-white/90 hover:text-white font-medium transition-colors duration-300">Gallery</a>
+        <a href="faqs.html" class="nav-link text-white/90 hover:text-white font-medium transition-colors duration-300">FAQs</a>
+      </div>
+      <div class="hidden md:flex items-center gap-4">
+        <a href="https://edigitalnepal.com/sms/login/?team_id=1610" id="loginBtn" class="btn-outline text-sm py-2.5 px-6 transition-all duration-300">Login</a>
+      </div>
+      <button id="menuToggle" class="md:hidden text-white text-2xl transition-colors duration-300" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden flex-col bg-white/95 backdrop-blur-lg mt-4 rounded-xl shadow-2xl p-4 space-y-3 text-gray-800">
+      <a href="index.html" class="block py-2 px-3 rounded-lg hover:bg-blue-50 transition">Home</a>
+      <a href="programs.html" class="block py-2 px-3 rounded-lg hover:bg-blue-50 transition">Programs</a>
+      <a href="teams.html" class="block py-2 px-3 rounded-lg hover:bg-blue-50 transition">Our Team</a>
+      <a href="gallery.html" class="block py-2 px-3 rounded-lg hover:bg-blue-50 transition">Gallery</a>
+      <a href="faqs.html" class="block py-2 px-3 rounded-lg hover:bg-blue-50 transition">FAQs</a>
+      <div class="flex gap-3 pt-2">
+        <a href="https://edigitalnepal.com/sms/login/?team_id=1610" class="flex-1 text-center bg-blue-900 text-white py-2 rounded-full">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="Image/Background/Background.jpg" alt="Contact Hero" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+    </div>
+    <div class="relative z-10 text-center text-white px-6 animate-fadeUp max-w-4xl mx-auto" style="padding-top: 80px;">
+      <span class="inline-block px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-sm font-semibold tracking-wider mb-6 border border-white/20">📞 Get in Touch</span>
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl">
+        Contact <span class="text-amber-400">Us</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto font-light">
+        We'd love to hear from you. Reach out with any questions or to schedule a visit.
+      </p>
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+      <span class="text-white/60 text-xs tracking-widest">SCROLL</span>
+      <div class="w-5 h-8 border-2 border-white/50 rounded-full flex justify-center">
+        <div class="w-1.5 h-3 bg-white rounded-full mt-1 animate-bounce"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="max-w-7xl mx-auto px-6 py-20 md:py-24">
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <!-- Left Column: Form + Info -->
+      <div class="space-y-8 reveal">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-2">Send us a <span class="text-blue-800">Message</span></h2>
+          <p class="text-gray-500">Fill out the form below and we'll get back to you within 24 hours.</p>
+        </div>
+
+        <!-- Contact Form -->
+        <form id="contactForm" class="space-y-5">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1.5">Full Name *</label>
+              <input type="text" required class="input-field" placeholder="Enter your name">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1.5">Email Address *</label>
+              <input type="email" required class="input-field" placeholder="your@email.com">
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1.5">Phone Number</label>
+            <input type="tel" class="input-field" placeholder="+977 98...">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1.5">Subject *</label>
+            <input type="text" required class="input-field" placeholder="How can we help?">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1.5">Message *</label>
+            <textarea rows="5" required class="input-field" placeholder="Type your message here..."></textarea>
+          </div>
+          <button type="submit" class="w-full bg-gradient-to-r from-blue-800 to-indigo-800 text-white font-semibold py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.02] active:scale-95">
+            Send Message <i class="fas fa-paper-plane ml-2"></i>
+          </button>
+        </form>
+
+        <!-- Contact Info Cards -->
+        <div class="grid sm:grid-cols-2 gap-4 pt-2">
+          <div class="modern-card p-4 flex items-start gap-3">
+            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-map-marker-alt text-blue-800"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800">Visit Us</h4>
+              <p class="text-sm text-gray-500 leading-relaxed">Sanfehatbazzar-03, Achham, Nepal</p>
+            </div>
+          </div>
+          <div class="modern-card p-4 flex items-start gap-3">
+            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-phone-alt text-blue-800"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800">Call Us</h4>
+              <p class="text-sm text-gray-500">+977-097-625139</p>
+            </div>
+          </div>
+          <div class="modern-card p-4 flex items-start gap-3">
+            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-envelope text-blue-800"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800">Email Us</h4>
+              <p class="text-sm text-gray-500 break-all">infokindergardenacademy@gmail.com</p>
+            </div>
+          </div>
+          <div class="modern-card p-4 flex items-start gap-3">
+            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-clock text-blue-800"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800">Office Hours</h4>
+              <p class="text-sm text-gray-500">Sun - Fri: 9:30 AM – 4:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Google Maps -->
+      <div class="reveal">
+        <div class="modern-card p-0 overflow-hidden">
+          <div class="p-6 border-b border-gray-100">
+            <h3 class="text-xl font-bold text-gray-900">Find Us on Map</h3>
+            <p class="text-gray-500 text-sm mt-1">Kinder Garden Academy, Sanfehatbazzar-03, Achham</p>
+          </div>
+          <div class="h-[400px] md:h-[500px] w-full">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d226.1383!2d81.204733!3d29.234531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a3b6631c0bc1f7%3A0xbc0b422061aaf090!2sKinder%20Garden%20Academy!5e0!3m2!1sen!2snp!4v168xxxxxxx"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="w-full h-full">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with linked Sudeep Pandit (matching index style) -->
+  <footer class="footer-gradient pt-20 pb-10 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="Image/Logo.png" class="w-10 h-10" alt="Logo">
+          <span class="text-xl font-bold text-white">Kinder Garden Academy</span>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">Nurturing future leaders through innovation, compassion, and academic excellence since 2063.</p>
+        <div class="flex gap-4 mt-5">
+          <a href="https://www.facebook.com/profile.php?id=61558176006272" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/kinder_garden_academy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-gray-400 hover:text-pink-400 transition"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@kinder_garden_academy" class="text-gray-400 hover:text-white transition"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-gray-400 text-sm">
+          <li><a href="index.html" class="footer-link inline-block">Home</a></li>
+          <li><a href="programs.html" class="footer-link inline-block">Programs</a></li>
+          <li><a href="teams.html" class="footer-link inline-block">Our Team</a></li>
+          <li><a href="gallery.html" class="footer-link inline-block">Gallery</a></li>
+          <li><a href="faqs.html" class="footer-link inline-block">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">Contact</h4>
+        <ul class="space-y-2 text-gray-400 text-sm">
+          <li class="flex items-start gap-2"><i class="fas fa-map-marker-alt mt-1 text-blue-400"></i> Sanfehatbazzar-03, Achham, Nepal</li>
+          <li class="flex items-center gap-2"><i class="fas fa-phone text-blue-400"></i> +977-097-625139</li>
+          <li class="flex items-center gap-2"><i class="fas fa-envelope text-blue-400"></i> infokindergardenacademy@gmail.com</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">Stay Informed</h4>
+        <p class="text-gray-400 text-sm mb-3">Subscribe to our newsletter for updates.</p>
+        <div class="flex">
+          <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-full bg-gray-800 text-white border border-gray-700 focus:outline-none w-full text-sm">
+          <button class="bg-blue-700 hover:bg-blue-800 px-5 py-2 rounded-r-full text-white transition"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-12 pt-6 text-center text-gray-500 text-sm">
+      <p>© 2025 Kinder Garden Academy · Designed with ❤️ by 
+        <a href="https://sudeeppandit.com.np" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 hover:underline transition duration-200 font-medium">Sudeep Pandit</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
+    <span class="arrow-icon"><i class="fas fa-arrow-up"></i></span>
+  </button>
+
+  <script src="scripts.js"></script>
+
+
+</body>
+</html>

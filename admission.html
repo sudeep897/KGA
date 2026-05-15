@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="description" content="Apply for admission to Kinder Garden Academy – a modern international school in Achham, Nepal. Fill out the online admission form for session 2082." />
+  <title>Admission - Kinder Garden Academy | International School Achham</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #1f2937;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, .serif {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #1e3a8a; border-radius: 10px; }
+
+    .modern-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 0.8rem 1.2rem;
+      border-radius: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #f8fafc;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+    .input-field:focus {
+      outline: none;
+      border-color: #1e3a8a;
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(30,64,175,0.1);
+    }
+    select.input-field {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%231e3a8a'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1.2rem;
+    }
+
+    .error-border { border-color: #ef4444 !important; }
+    .error-message { color: #ef4444; font-size: 0.75rem; margin-top: 0.25rem; display: none; }
+
+    .form-section {
+      background: #f8fafc;
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.5rem;
+    }
+    .required-star::after { content: " *"; color: #ef4444; }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-gray-50 to-white py-8 px-4">
+  <div class="max-w-5xl mx-auto">
+    
+    <!-- School Header -->
+    <div class="text-center mb-8">
+      <a href="index.html" class="inline-block">
+        <img src="Image/Logo.png" alt="Kinder Garden Academy Logo" class="w-24 h-24 md:w-28 md:h-28 object-contain mx-auto rounded-full shadow-md bg-white p-2 hover:scale-105 transition-transform duration-300">
+      </a>
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mt-4">Kinder Garden Academy</h1>
+      <p class="text-gray-600 mt-1 text-lg">Sanfehatbazzar-03, Achham, Nepal</p>
+      <div class="flex justify-center gap-6 mt-2 text-gray-700 font-medium flex-wrap">
+        <span><i class="fas fa-phone-alt text-blue-800 mr-1"></i> +977 9801165699</span>
+        <span><i class="fas fa-phone-alt text-blue-800 mr-1"></i> +977 9848526938</span>
+        <span><i class="fas fa-envelope text-blue-800 mr-1"></i> infokindergardenacademy@gmail.com</span>
+      </div>
+    </div>
+
+    <!-- Admission Form Card -->
+    <div class="modern-card p-0 overflow-hidden">
+      <div class="bg-gradient-to-r from-blue-900 to-indigo-800 px-6 py-5">
+        <h2 class="text-2xl md:text-3xl font-bold text-white">🎓 Admission Application 2082</h2>
+        <p class="text-blue-100 mt-1">All fields marked with <span class="text-amber-300">*</span> are mandatory</p>
+      </div>
+
+      <form id="admissionForm" class="p-6 md:p-8 space-y-6">
+        <!-- Grade Selection -->
+        <div class="form-section">
+          <h3 class="text-xl font-bold text-gray-800 border-l-4 border-blue-800 pl-3 mb-4">Program & Grade</h3>
+          <div>
+            <label class="block text-gray-700 font-semibold mb-2">Select Grade <span class="text-red-500">*</span></label>
+            <select id="grade" name="grade" class="input-field">
+              <option value="">-- Choose Grade --</option>
+              <option value="PG">PG (Play Group)</option>
+              <option value="Nursery">Nursery</option>
+              <option value="LKG">LKG</option>
+              <option value="UKG">UKG</option>
+              <option value="1">Grade 1</option>
+              <option value="2">Grade 2</option>
+              <option value="3">Grade 3</option>
+              <option value="4">Grade 4</option>
+              <option value="5">Grade 5</option>
+              <option value="6">Grade 6</option>
+              <option value="7">Grade 7</option>
+              <option value="8">Grade 8</option>
+              <option value="9">Grade 9</option>
+              <option value="10">Grade 10</option>
+            </select>
+            <div class="error-message" id="gradeError">Please select a grade</div>
+          </div>
+        </div>
+
+        <!-- Student Name -->
+        <div class="form-section">
+          <h3 class="text-xl font-bold text-gray-800 border-l-4 border-blue-800 pl-3 mb-4">Student's Full Name</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label class="block font-semibold mb-2">First Name <span class="text-red-500">*</span></label>
+              <input type="text" id="firstName" class="input-field">
+              <div class="error-message" id="firstNameError">Required</div>
+            </div>
+            <div>
+              <label class="block font-semibold mb-2">Middle Name</label>
+              <input type="text" id="middleName" class="input-field">
+            </div>
+            <div>
+              <label class="block font-semibold mb-2">Last Name <span class="text-red-500">*</span></label>
+              <input type="text" id="lastName" class="input-field">
+              <div class="error-message" id="lastNameError">Required</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Information -->
+        <div class="form-section">
+          <h3 class="text-xl font-bold text-gray-800 border-l-4 border-blue-800 pl-3 mb-4">Personal Information</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div>
+              <label class="block font-semibold mb-2">Date of Birth (B.S.) <span class="text-red-500">*</span></label>
+              <input type="text" id="dobBS" placeholder="YYYY-MM-DD (e.g., 2078-03-15)" class="input-field">
+              <div class="error-message" id="dobBSError">Invalid BS date (YYYY-MM-DD)</div>
+            </div>
+            <div>
+              <label class="block font-semibold mb-2">Date of Birth (A.D.) <span class="text-red-500">*</span></label>
+              <input type="date" id="dobAD" class="input-field">
+              <div class="error-message" id="dobADError">AD date required</div>
+            </div>
+            <div>
+              <label class="block font-semibold mb-2">Gender <span class="text-red-500">*</span></label>
+              <select id="gender" class="input-field">
+                <option value="">Select</option>
+                <option>Male</option><option>Female</option><option>Other</option>
+              </select>
+              <div class="error-message" id="genderError">Required</div>
+            </div>
+            <div>
+              <label class="block font-semibold mb-2">Nationality <span class="text-red-500">*</span></label>
+              <input type="text" id="nationality" value="Nepali" class="input-field">
+              <div class="error-message" id="nationalityError">Required</div>
+            </div>
+            <div class="md:col-span-2">
+              <label class="block font-semibold mb-2">Full Address (Street/Tole) <span class="text-red-500">*</span></label>
+              <input type="text" id="address" class="input-field">
+              <div class="error-message" id="addressError">Required</div>
+            </div>
+            <div>
+              <label class="block font-semibold mb-2">Mobile Number <span class="text-red-500">*</span></label>
+              <input type="tel" id="mobile" placeholder="98XXXXXXXX" class="input-field">
+              <div class="error-message" id="mobileError">10 digit mobile required</div>
+            </div>
+            <div>
+              <label class="block font-semibold mb-2">Province <span class="text-red-500">*</span></label>
+              <select id="province" class="input-field">
+                <option value="">-- Select --</option>
+                <option>Province 1 (Koshi)</option><option>Madhesh</option><option>Bagmati</option><option>Gandaki</option>
+                <option>Lumbini</option><option>Karnali</option><option>Sudurpashchim</option>
+              </select>
+              <div class="error-message" id="provinceError">Required</div>
+            </div>
+            <div>
+              <label class="block font-semibold mb-2">District <span class="text-red-500">*</span></label>
+              <select id="district" class="input-field">
+                <option value="">First select province</option>
+              </select>
+              <div class="error-message" id="districtError">Required</div>
+            </div>
+            <div class="md:col-span-2">
+              <label class="block font-semibold mb-2">Municipality / Rural Municipality <span class="text-red-500">*</span></label>
+              <select id="municipality" class="input-field">
+                <option value="">First select district</option>
+              </select>
+              <div class="error-message" id="municipalityError">Required</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic Information -->
+        <div class="form-section">
+          <h3 class="text-xl font-bold text-gray-800 border-l-4 border-blue-800 pl-3 mb-4">Academic Information</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div>
+              <label class="block font-semibold mb-2">Previous School</label>
+              <input type="text" id="prevSchool" class="input-field">
+            </div>
+            <div>
+              <label class="block font-semibold mb-2">Last Grade Completed</label>
+              <input type="text" id="lastGrade" class="input-field">
+            </div>
+            <div>
+              <label class="block font-semibold mb-2">GPA/Percentage (if any)</label>
+              <input type="text" id="gpa" class="input-field">
+            </div>
+          </div>
+        </div>
+
+        <!-- Parents Information -->
+        <div class="form-section">
+          <h3 class="text-xl font-bold text-gray-800 border-l-4 border-blue-800 pl-3 mb-4">Parents / Guardian Information</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div>
+              <label class="block font-semibold mb-2">Father's Full Name <span class="text-red-500">*</span></label>
+              <input type="text" id="fatherName" class="input-field">
+              <div class="error-message" id="fatherNameError">Required</div>
+            </div>
+            <div>
+              <label class="block font-semibold mb-2">Father's Contact <span class="text-red-500">*</span></label>
+              <input type="tel" id="fatherPhone" class="input-field">
+              <div class="error-message" id="fatherPhoneError">Valid 10-digit</div>
+            </div>
+            <div>
+              <label class="block font-semibold mb-2">Mother's Full Name <span class="text-red-500">*</span></label>
+              <input type="text" id="motherName" class="input-field">
+              <div class="error-message" id="motherNameError">Required</div>
+            </div>
+            <div>
+              <label class="block font-semibold mb-2">Mother's Contact <span class="text-red-500">*</span></label>
+              <input type="tel" id="motherPhone" class="input-field">
+              <div class="error-message" id="motherPhoneError">Valid 10-digit</div>
+            </div>
+            <div>
+              <label class="block font-semibold mb-2">Guardian (if different)</label>
+              <input type="text" id="guardianName" class="input-field">
+            </div>
+            <div>
+              <label class="block font-semibold mb-2">Guardian Contact</label>
+              <input type="tel" id="guardianPhone" class="input-field">
+            </div>
+          </div>
+        </div>
+
+        <!-- Supporting Documents -->
+        <div class="form-section">
+          <h3 class="text-xl font-bold text-gray-800 border-l-4 border-blue-800 pl-3 mb-4">Supporting Documents (Optional)</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div>
+              <label class="block font-semibold mb-2">Birth Certificate</label>
+              <input type="file" accept="image/*,.pdf" class="w-full text-sm file:mr-2 file:py-2 file:px-4 file:rounded-full file:bg-blue-50 file:border-0 file:text-blue-800 hover:file:bg-blue-100">
+            </div>
+            <div>
+              <label class="block font-semibold mb-2">Previous School Report</label>
+              <input type="file" accept="image/*,.pdf" class="w-full text-sm file:mr-2 file:py-2 file:px-4 file:rounded-full file:bg-blue-50 file:border-0 file:text-blue-800 hover:file:bg-blue-100">
+            </div>
+            <div>
+              <label class="block font-semibold mb-2">Passport Size Photo</label>
+              <input type="file" accept="image/*" class="w-full text-sm file:mr-2 file:py-2 file:px-4 file:rounded-full file:bg-blue-50 file:border-0 file:text-blue-800 hover:file:bg-blue-100">
+            </div>
+          </div>
+        </div>
+
+        <!-- Queries -->
+        <div class="form-section">
+          <h3 class="text-xl font-bold text-gray-800 border-l-4 border-blue-800 pl-3 mb-4">Any Queries / Remarks</h3>
+          <textarea id="queries" rows="3" class="input-field" placeholder="If you have any questions, write here..."></textarea>
+        </div>
+
+        <!-- Submit -->
+        <div class="flex justify-center pt-4">
+          <button type="submit" class="bg-gradient-to-r from-blue-800 to-indigo-800 text-white font-bold py-4 px-12 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">🎓 Apply Now</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Powered by with company logo -->
+    <div class="flex justify-center items-center gap-3 mt-10">
+      <a href="https://supeksha.com" target="_blank" rel="noopener noreferrer">
+        <img src="Image/Sudeep Logo.png" alt="Supeksha Innovations Nepal Logo" class="w-10 h-10 object-contain rounded-full shadow-sm hover:scale-110 transition-transform duration-300">
+      </a>
+      <p class="text-gray-500 text-sm">
+        Powered by <a href="https://esupeksha.com" target="_blank" rel="noopener noreferrer" class="text-blue-700 font-semibold hover:underline">Supeksha Innovations Nepal</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // ====================== NEPAL LOCAL BODY DATA ======================
+    const nepalLocalBodies = {
+      "Province 1 (Koshi)": {
+        "Bhojpur": ["Bhojpur", "Shadananda", "Temi", "Ramprasad Rai", "Aamchowk", "Hatuwagadhi", "Pauwadungma", "Salpa"],
+        "Dhankuta": ["Dhankuta", "Pakhribas", "Mahalaxmi", "Sangurigadhi", "Chhathar Jorpati", "Chaubise"],
+        "Ilam": ["Ilam", "Deumai", "Mai", "Mangsebung", "Phakphokthum", "Chulachuli", "Rong", "Sandakpur"],
+        "Jhapa": ["Bhadrapur", "Birtamod", "Arjundhara", "Kankai", "Mechinagar", "Damak", "Gauradaha", "Haldibari", "Kamal", "Shivasatakshi", "Barhadashi", "Jhapa", "Buddhashanti", "Gaurigunj", "Kachankawal"],
+        "Khotang": ["Diktel", "Halesi", "Khotehang", "Sakela", "Baraha", "Kepilasgadhi", "Aiselukharka", "Jantedhunga", "Lamidanda", "Mauwabote", "Rupakot"],
+        "Morang": ["Biratnagar", "Sundar Haraicha", "Belbari", "Pathari", "Ratuwamai", "Letang", "Katahari", "Gramthan", "Miklajung", "Kanepokhari", "Budiganga", "Jahada", "Dhanpalthan", "Kerabari"],
+        "Okhaldhunga": ["Siddhicharan", "Khijidemba", "Champadevi", "Manebhanjyang", "Liku", "Moli", "Sunkoshi", "Chisankhugadhi"],
+        "Panchthar": ["Phidim", "Falgunanda", "Miklajung", "Yangwarak", "Kummayak", "Tumbewa"],
+        "Sankhuwasabha": ["Khandbari", "Chainpur", "Dharmadevi", "Madi", "Panchkhapan", "Bhotkhola", "Makalu", "Sabhapokhari", "Sisuwakhola"],
+        "Solukhumbu": ["Solududhkunda", "Mahakulung", "Nechasalyan", "Thulung Dudhkoshi", "Likhu", "Sotang"],
+        "Sunsari": ["Dharan", "Itahari", "Duhabi", "Barahachhetra", "Bhokraha", "Inaruwa", "Ramdhuni", "Koshi", "Harinagar", "Dewanganj", "Gadhi"],
+        "Taplejung": ["Phungling", "Meringden", "Maiwakhola", "Pathibhara", "Sidingwa", "Aathrai Tribeni", "Sirijangha"],
+        "Terhathum": ["Myanglung", "Laligurans", "Aathrai", "Phedap", "Chhathar"],
+        "Udayapur": ["Triyuga", "Katari", "Chaudandigadhi", "Belaka", "Udayapurgadhi", "Rautamai", "Tapli"]
+      },
+      "Madhesh": {
+        "Bara": ["Kalaiya", "Jitpur", "Simraungadh", "Pheta", "Kolhabi", "Nijgadh", "Mahagadhimai", "Pachrauta", "Prasauni", "Suwarna", "Adarsha", "Baragadhi", "Devtal", "Karaiyamai", "Parwanipur"],
+        "Parsa": ["Birgunj", "Pokhariya", "Bahudarmai", "Parsagadhi", "Jirabhawani", "Bindabasini", "Paterwa Sugauli", "Sakhuwa", "Chhipaharmai", "Thori", "Kalikamai", "Pakaha", "Jagarnathpur"],
+        "Dhanusha": ["Janakpur", "Dhanushadham", "Mithila", "Sabaila", "Hansapur", "Kamala", "Shahidnagar", "Ganeshman", "Bideha", "Chhireshwarnath", "Mithila Bihari", "Aurahi", "Bateshwar", "Lakshminiya"],
+        "Mahottari": ["Jaleshwar", "Bardibas", "Gaushala", "Aurahi", "Balawa", "Manara", "Loharpatti", "Ramgopalpur", "Ekdanra", "Pipra", "Matihani", "Samsi", "Bhagwanpur"],
+        "Sarlahi": ["Malangwa", "Lalbandi", "Bagmati", "Barhathwa", "Haripur", "Ishwarpur", "Kabilasi", "Brahmapuri", "Godaita", "Basbariya", "Parsa", "Chandranagar", "Bishnu", "Ramnagar"],
+        "Rautahat": ["Gaur", "Chandrapur", "Garuda", "Brindaban", "Rajdevi", "Katahariya", "Madhav Narayan", "Paroha", "Dewahi", "Fatuha", "Gujara", "Ishnath"],
+        "Siraha": ["Siraha", "Lahan", "Dhangadhimai", "Mirchaiya", "Sukhipur", "Kalyanpur", "Bhagwanpur", "Aurahi", "Bishnupur", "Naraha", "Karjanha", "Sakhuwanankarkatti"],
+        "Saptari": ["Rajbiraj", "Shambhunath", "Bode Barsain", "Khadak", "Kanchanrup", "Tilathi Koiladi", "Rupani", "Bishnupur", "Chhinnamasta", "Balara", "Agnisair"]
+      },
+      "Bagmati": {
+        "Kathmandu": ["Kathmandu", "Kirtipur", "Gokarneshwar", "Chandragiri", "Tokha", "Nagarjun", "Tarakeshwar", "Shankharapur", "Budhanilkantha", "Dakshinkali"],
+        "Lalitpur": ["Lalitpur", "Godawari", "Mahalaxmi", "Konjyosom", "Bagmati"],
+        "Bhaktapur": ["Bhaktapur", "Changunarayan", "Madhyapur Thimi", "Suryabinayak"],
+        "Kavrepalanchok": ["Dhulikhel", "Banepa", "Panauti", "Namobuddha", "Mandan Deupur", "Panchkhal", "Roshi", "Bethanchok", "Khanikhola", "Mahadevsthan", "Bhumlu", "Temal"],
+        "Sindhupalchok": ["Chautara", "Melamchi", "Bahrabise", "Sunkoshi", "Helambu", "Indrawati", "Panchpokhari", "Lisankhu", "Bhotekoshi", "Jugal", "Tripurasundari"],
+        "Rasuwa": ["Dhunche", "Gosaikunda", "Naukunda", "Kalika", "Uttargaya"],
+        "Dhading": ["Nilkantha", "Dhunibeshi", "Gajuri", "Siddhalekh", "Benighat Rorang", "Thakre", "Rubi Valley", "Jwalamukhi", "Tripurasundari", "Gangajamuna"],
+        "Nuwakot": ["Bidur", "Belkotgadhi", "Kakani", "Kispang", "Likhu", "Myagang", "Panchakanya", "Suryagadhi", "Tadi", "Shivapuri"],
+        "Makwanpur": ["Hetauda", "Thaha", "Bakaiya", "Bagmati", "Bhimphedi", "Indrasarowar", "Kailash", "Manahari", "Raksirang"],
+        "Chitwan": ["Bharatpur", "Ratnanagar", "Khairhani", "Madi", "Rapti", "Kalar", "Ichchhakamana"]
+      },
+      "Gandaki": {
+        "Gorkha": ["Gorkha", "Palungtar", "Sulikot", "Siranchowk", "Aarughat", "Gandaki", "Dharche", "Bhimsen", "Sahid Lakhan"],
+        "Kaski": ["Pokhara", "Annapurna", "Madi", "Rupa", "Machhapuchhre"],
+        "Lamjung": ["Besisahar", "Sundarbazar", "Rainas", "Marsyangdi", "Dudhpokhari", "Kwholasothar", "Madhyanepal"],
+        "Syangja": ["Putalibazar", "Waling", "Galyang", "Biruwa", "Kaligandaki", "Aandhikhola", "Arjun Chaupari", "Harinas", "Phedikhola"],
+        "Tanahun": ["Damauli", "Bhimad", "Myagde", "Bandipur", "Shuklagandaki", "Anbukhaireni", "Devghat", "Rishing"],
+        "Manang": ["Chame", "Narpa Bhumi", "Nason", "Manang Ngisyang"],
+        "Mustang": ["Jomsom", "Gharpajhong", "Thasang", "Lomanthang", "Baragung", "Lo-Ghekar"],
+        "Myagdi": ["Beni", "Mangala", "Malika", "Dhawalagiri", "Annapurna", "Raghuganga"],
+        "Nawalpur": ["Kawasoti", "Gaindakot", "Devachuli", "Madhyabindu", "Bungdikot", "Bulingtar", "Hupsekot"],
+        "Parasi": ["Ramgram", "Sunwal", "Bardaghat", "Susta", "Palhinandan", "Pratappur", "Sarawal"]
+      },
+      "Lumbini": {
+        "Kapilvastu": ["Kapilvastu", "Krishnanagar", "Shivaraj", "Buddhabhumi", "Maharajganj", "Mayadevi", "Yashodhara", "Suddhodhan", "Bijaynagar"],
+        "Nawalparasi": ["Kawasoti", "Gaindakot", "Devachuli", "Madhyabindu", "Bungdikot", "Bulingtar", "Hupsekot"],
+        "Rupandehi": ["Butwal", "Siddharthanagar", "Devdaha", "Sainamaina", "Lumbini", "Siyari", "Rohini", "Mayadevi", "Samari", "Kotahimai", "Marchawar"],
+        "Arghakhanchi": ["Sandhikharka", "Sitganga", "Bhumikasthan", "Chhatradev", "Panini", "Malarani"],
+        "Gulmi": ["Tamghas", "Resunga", "Musikot", "Chhatrakot", "Satyawati", "Madane", "Isma", "Kaligandaki", "Ruru", "Dhurkot"],
+        "Palpa": ["Tansen", "Rampur", "Ribdikot", "Rainadevi", "Purbakhola", "Nisdi", "Mathagadhi", "Bagnaskali"],
+        "Dang": ["Ghorahi", "Tulsipur", "Lamahi", "Babai", "Dangisharan", "Rajpur", "Rapti", "Gadhawa", "Shantinagar"],
+        "Pyuthan": ["Pyuthan", "Swargadwari", "Mandavi", "Jhimruk", "Naubahini", "Gaumukhi", "Ajirbar", "Mallarani"],
+        "Rolpa": ["Liwang", "Sunchhahari", "Thawang", "Runtigadhi", "Tribeni", "Madi", "Gangadev", "Paribartan"],
+        "Banke": ["Nepalgunj", "Kohalpur", "Rapti Sonari", "Narainapur", "Janaki", "Duduwa", "Baijanath", "Khajura"],
+        "Bardiya": ["Gulariya", "Rajapur", "Madhuwan", "Thakurbaba", "Bansgadhi", "Barbardiya", "Geruwa"]
+      },
+      "Karnali": {
+        "Dolpa": ["Dolpa", "Thulibheri", "Tripurasundari", "Jagadulla", "Mudkechula", "Kaike", "Shey Phoksundo", "Chharka Tangsong"],
+        "Humla": ["Simkot", "Namkha", "Kharpunath", "Sarkegad", "Chankheli", "Adanchuli", "Tanjakot"],
+        "Jumla": ["Chandannath", "Tatopani", "Patarasi", "Guthichaur", "Kanakasundari", "Hima", "Sinja"],
+        "Kalikot": ["Khandachakra", "Raskot", "Tilagufa", "Sanni Triveni", "Palata", "Narharinath", "Mahawai", "Shubha Kalika"],
+        "Mugu": ["Gamgadhi", "Soru", "Khatyad", "Chhayanath Rara", "Mugum Karmarong"],
+        "Salyan": ["Salyan", "Sharada", "Bagchaur", "Bangad Kupinde", "Kalimati", "Triveni", "Kapurkot", "Chhatreshwari"],
+        "Surkhet": ["Birendranagar", "Gurbhakot", "Bheriganga", "Chaukune", "Barahatal", "Simta", "Lekbeshi", "Panchapuri"],
+        "Dailekh": ["Narayan", "Dullu", "Aathabis", "Chamunda Bindrasaini", "Bhagawatimai", "Gurans", "Mahabu", "Naumule", "Thantikandh"],
+        "Jajarkot": ["Khalanga", "Nalgad", "Bheri", "Chhedagad", "Shivalaya", "Junichande"],
+        "Rukum": ["Musikot", "Chaurjahari", "Aathbiskot", "Banphikot", "Tribeni", "Putha Uttarganga", "Sisne"]
+      },
+      "Sudurpashchim": {
+        "Achham": ["Mangalsen", "Kamalbazar", "Sanfebagar", "Bannigadhi", "Chaurpati", "Ramaroshan", "Dhakari", "Turmakhand"],
+        "Baitadi": ["Dasharathchand", "Patan", "Melauli", "Purchaudi", "Sigas", "Surnaya", "Dilasaini", "Dogada Kedarsain"],
+        "Bajhang": ["Jayaprithvi", "Bungal", "Talkot", "Masta", "Kedarsyu", "Thalara", "Bitthad", "Surma", "Saipal"],
+        "Bajura": ["Badimalika", "Budhiganga", "Tribeni", "Swamikartik", "Khaptad Chhededaha", "Gaumul", "Pandav Gupha"],
+        "Dadeldhura": ["Amargadhi", "Parashuram", "Ajayameru", "Alital", "Bhageshwar", "Navadurga", "Ganyapdhura"],
+        "Darchula": ["Mahakali", "Shailyashikhar", "Malikarjun", "Api Himal", "Duhu", "Marma", "Lekam", "Naugad"],
+        "Doti": ["Dipayal Silgadhi", "Shikhar", "Jorayal", "Bogtan", "K.I. Singh", "Purbichauki", "Badikedar", "Adarsha"],
+        "Kailali": ["Dhangadhi", "Godawari", "Gauriganga", "Lamkichuha", "Tikapur", "Ghodi", "Bhajani", "Janaki", "Joshipur", "Bardagoriya", "Mohanyal"],
+        "Kanchanpur": ["Bhimdatta", "Krishnapur", "Punarbas", "Bedkot", "Shuklaphanta", "Belauri", "Laljhadi"]
+      }
+    };
+
+    const provinceSelect = document.getElementById('province');
+    const districtSelect = document.getElementById('district');
+    const municipalitySelect = document.getElementById('municipality');
+
+    provinceSelect.addEventListener('change', function() {
+      const province = this.value;
+      districtSelect.innerHTML = '<option value="">-- Select District --</option>';
+      municipalitySelect.innerHTML = '<option value="">-- First select district --</option>';
+      if (province && nepalLocalBodies[province]) {
+        Object.keys(nepalLocalBodies[province]).forEach(dist => {
+          const option = document.createElement('option');
+          option.value = dist;
+          option.textContent = dist;
+          districtSelect.appendChild(option);
+        });
+      }
+    });
+
+    districtSelect.addEventListener('change', function() {
+      const province = provinceSelect.value;
+      const district = this.value;
+      municipalitySelect.innerHTML = '<option value="">-- Select Municipality --</option>';
+      if (province && district && nepalLocalBodies[province][district]) {
+        nepalLocalBodies[province][district].forEach(unit => {
+          const option = document.createElement('option');
+          option.value = unit;
+          option.textContent = unit;
+          municipalitySelect.appendChild(option);
+        });
+      }
+    });
+
+    // BS to AD converter
+    const bsToAd = (bsYear, bsMonth, bsDay) => {
+      const monthDays = [31, 32, 31, 32, 31, 30, 30, 30, 29, 30, 29, 30];
+      const refBsYear = 2000, refBsMonth = 1, refBsDay = 1;
+      const refAdYear = 1943, refAdMonth = 3, refAdDay = 14;
+      let daysDiff = 0;
+      let totalDaysRefToEndOfYear = 0;
+      for (let m = refBsMonth - 1; m < 12; m++) totalDaysRefToEndOfYear += monthDays[m];
+      let daysInGivenYear = 0;
+      for (let m = 0; m < bsMonth - 1; m++) daysInGivenYear += monthDays[m];
+      daysInGivenYear += bsDay - 1;
+      let daysInRefYear = 0;
+      for (let m = 0; m < refBsMonth - 1; m++) daysInRefYear += monthDays[m];
+      daysInRefYear += refBsDay - 1;
+      daysDiff = (totalDaysRefToEndOfYear - daysInRefYear) + daysInGivenYear;
+      for (let y = refBsYear + 1; y < bsYear; y++) {
+        daysDiff += (y % 4 === 0 ? 366 : 365);
+      }
+      const adDate = new Date(refAdYear, refAdMonth - 1, refAdDay);
+      adDate.setDate(adDate.getDate() + daysDiff);
+      const adYear = adDate.getFullYear();
+      const adMonth = String(adDate.getMonth() + 1).padStart(2, '0');
+      const adDay = String(adDate.getDate()).padStart(2, '0');
+      return `${adYear}-${adMonth}-${adDay}`;
+    };
+
+    const dobBS = document.getElementById('dobBS');
+    const dobAD = document.getElementById('dobAD');
+    dobBS.addEventListener('blur', () => {
+      const bs = dobBS.value.trim();
+      if (/^\d{4}-\d{2}-\d{2}$/.test(bs)) {
+        const [year, month, day] = bs.split('-').map(Number);
+        if (year >= 2000 && year <= 2090 && month >= 1 && month <= 12 && day >= 1 && day <= 32) {
+          dobAD.value = bsToAd(year, month, day);
+        }
+      }
+    });
+
+    // Validation helpers
+    function showError(id, condition, errorId) {
+      const field = document.getElementById(id);
+      const errorSpan = document.getElementById(errorId);
+      if (!condition) {
+        field.classList.add('error-border');
+        errorSpan.style.display = 'block';
+        return false;
+      } else {
+        field.classList.remove('error-border');
+        errorSpan.style.display = 'none';
+        return true;
+      }
+    }
+
+    function validatePhone(phone) {
+      const digits = phone.replace(/\D/g, '');
+      return digits.length === 10 && /^[9][8-9]/.test(digits);
+    }
+
+    const form = document.getElementById('admissionForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let valid = true;
+      valid &= showError('grade', document.getElementById('grade').value !== '', 'gradeError');
+      valid &= showError('firstName', document.getElementById('firstName').value.trim().length > 0, 'firstNameError');
+      valid &= showError('lastName', document.getElementById('lastName').value.trim().length > 0, 'lastNameError');
+      valid &= showError('dobBS', /^\d{4}-\d{2}-\d{2}$/.test(dobBS.value.trim()), 'dobBSError');
+      valid &= showError('dobAD', dobAD.value !== '', 'dobADError');
+      valid &= showError('gender', document.getElementById('gender').value !== '', 'genderError');
+      valid &= showError('nationality', document.getElementById('nationality').value.trim().length > 0, 'nationalityError');
+      valid &= showError('address', document.getElementById('address').value.trim().length > 0, 'addressError');
+      valid &= showError('mobile', validatePhone(document.getElementById('mobile').value.trim()), 'mobileError');
+      valid &= showError('province', provinceSelect.value !== '', 'provinceError');
+      valid &= showError('district', districtSelect.value !== '', 'districtError');
+      valid &= showError('municipality', municipalitySelect.value !== '', 'municipalityError');
+      valid &= showError('fatherName', document.getElementById('fatherName').value.trim().length > 0, 'fatherNameError');
+      valid &= showError('fatherPhone', validatePhone(document.getElementById('fatherPhone').value.trim()), 'fatherPhoneError');
+      valid &= showError('motherName', document.getElementById('motherName').value.trim().length > 0, 'motherNameError');
+      valid &= showError('motherPhone', validatePhone(document.getElementById('motherPhone').value.trim()), 'motherPhoneError');
+
+      if (valid) {
+        alert('✅ Application submitted successfully! Our admission team will contact you soon.');
+        form.reset();
+        districtSelect.innerHTML = '<option value="">First select province</option>';
+        municipalitySelect.innerHTML = '<option value="">First select district</option>';
+        document.querySelectorAll('.error-border').forEach(el => el.classList.remove('error-border'));
+        document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+      } else {
+        alert('❌ Please fill all required fields correctly.');
+      }
+    });
+
+    // Anti-misuse protection
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.onkeydown = function(e) {
+      if (e.key === "F12" || (e.ctrlKey && e.shiftKey && ["I","C","J"].includes(e.key.toUpperCase())) || (e.ctrlKey && ["U","S"].includes(e.key.toUpperCase()))) {
+        e.preventDefault();
+        return false;
+      }
+    };
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('dragstart', e => e.preventDefault());
+    });
+  </script>
+</body>
+</html>
