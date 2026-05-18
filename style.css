@@ -650,3 +650,10 @@ h1, h2, h3, .serif {
     height: 44px;
   }
 }
+
+  /* ensure app download section is responsive and looks polished */
+    @media (max-width: 768px) {
+      .backdrop-blur-sm {
+        backdrop-filter: blur(8px);
+      }
+    }
