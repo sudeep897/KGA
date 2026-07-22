@@ -30,14 +30,33 @@
     document.getElementById('barDivider2')
   ];
 
-  // Adjust navbar top position on mobile
+  // Adjust navbar top position dynamically based on actual rendered heights.
+  // Previously this hardcoded 32px/40px breakpoints, which broke whenever the
+  // top contact bar wrapped onto two lines (long phone/email on narrow screens)
+  // and caused the navbar/hero content to overlap it. We now measure the real
+  // element heights and expose them as CSS variables so any fixed/sticky
+  // element (navbar, sticky team tabs, etc.) can stay perfectly in sync.
   function adjustNavbarTop() {
     if (!navbar) return;
-    const isMobile = window.innerWidth <= 640;
-    navbar.style.top = isMobile ? '32px' : '40px';
+    const topBarHeight = topBar ? topBar.getBoundingClientRect().height : 0;
+    document.documentElement.style.setProperty('--topbar-h', `${topBarHeight}px`);
+    navbar.style.top = `${topBarHeight}px`;
+    // Wait a frame so layout has settled before measuring the navbar itself
+    requestAnimationFrame(() => {
+      const navHeight = navbar.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--navbar-h', `${navHeight}px`);
+    });
   }
   adjustNavbarTop();
-  window.addEventListener('resize', adjustNavbarTop);
+
+  // Debounced resize handler (previously fired on every pixel of drag/resize)
+  let resizeTimer = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(adjustNavbarTop, 120);
+  });
+  // Recheck after fonts/images load, since text reflow can change topbar height
+  window.addEventListener('load', adjustNavbarTop);
 
   // Scroll handler for navbar, top bar, and scroll buttons
   function handleScroll() {
@@ -101,17 +120,50 @@
   // ---------- MOBILE MENU ----------
   if (menuToggle) {
     const mobileMenu = document.getElementById('mobileMenu');
-    menuToggle.addEventListener('click', () => {
+    const openMenu = () => {
       if (!mobileMenu) return;
-      mobileMenu.classList.toggle('hidden');
-      const isOpen = !mobileMenu.classList.contains('hidden');
-      menuToggle.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      mobileMenu.classList.remove('hidden');
+      // Force reflow so the max-height transition actually plays
+      void mobileMenu.offsetHeight;
+      mobileMenu.classList.add('menu-open');
+      menuToggle.classList.add('open');
+      menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+      menuToggle.setAttribute('aria-expanded', 'true');
+    };
+    const closeMenu = () => {
+      if (!mobileMenu) return;
+      mobileMenu.classList.remove('menu-open');
+      menuToggle.classList.remove('open');
+      menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+      menuToggle.setAttribute('aria-expanded', 'false');
+    };
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (!mobileMenu) return;
+      const isOpen = mobileMenu.classList.contains('menu-open');
+      isOpen ? closeMenu() : openMenu();
     });
+    // Close after tapping a link (nicer on same-page anchors, and tidy on nav)
+    if (mobileMenu) {
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+      document.addEventListener('click', (e) => {
+        if (mobileMenu.classList.contains('menu-open') &&
+            !mobileMenu.contains(e.target) &&
+            e.target !== menuToggle &&
+            !menuToggle.contains(e.target)) {
+          closeMenu();
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('menu-open')) closeMenu();
+      });
+    }
   }
 
   // ---------- SCROLL REVEAL (all pages) ----------
-  const revealElements = document.querySelectorAll('.reveal');
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -121,6 +173,19 @@
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
   revealElements.forEach(el => revealObserver.observe(el));
+
+  // Give each direct child of a `.stagger` container an incremental delay
+  // so grids of cards cascade in rather than popping in all at once.
+  document.querySelectorAll('.stagger').forEach(group => {
+    Array.from(group.children).forEach((child, i) => {
+      child.style.setProperty('--stagger-i', i);
+    });
+  });
+
+  // ---------- FOOTER: dynamic copyright year (keeps every page in sync) ----------
+  document.querySelectorAll('.copyright-year').forEach(el => {
+    el.textContent = new Date().getFullYear();
+  });
 
   // ---------- INDEX PAGE SPECIFIC ----------
   // Hero slider
