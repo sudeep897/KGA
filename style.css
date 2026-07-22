@@ -14,11 +14,47 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  /* Dynamic offsets kept in sync by scripts.js — sensible fallbacks below */
+  --topbar-h: 40px;
+  --navbar-h: 76px;
+  --site-header-h: calc(var(--topbar-h) + var(--navbar-h));
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background: #ffffff;
   color: #1f2937;
   overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Consistent focus states for accessibility + polish */
+a:focus-visible,
+button:focus-visible,
+.input-field:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #1e3a8a;
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
 h1, h2, h3, .serif {
@@ -41,11 +77,39 @@ h1, h2, h3, .serif {
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Directional / scale variants for visual variety */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-48px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(48px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+/* Staggered entrance for grids of cards: add class="stagger" to the grid container */
+.stagger > * {
+  transition-delay: calc(var(--stagger-i, 0) * 90ms);
 }
 
 /* ---------- KEYFRAMES (merged, no duplicates) ---------- */
@@ -72,6 +136,22 @@ h1, h2, h3, .serif {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+@keyframes kenBurns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+@keyframes shimmerSweep {
+  0% { transform: translateX(-120%) skewX(-15deg); }
+  100% { transform: translateX(220%) skewX(-15deg); }
+}
+@keyframes menuSlideIn {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes softPop {
+  0% { transform: scale(0.96); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 /* ---------- TOP CONTACT BAR (shared) ---------- */
@@ -138,6 +218,33 @@ h1, h2, h3, .serif {
   width: 100%;
 }
 
+/* Animated mobile menu (replaces instant hidden/shown toggle) */
+#mobileMenu {
+  display: flex;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, margin-top 0.4s ease, padding 0.4s ease;
+}
+#mobileMenu.menu-open {
+  max-height: 480px;
+  opacity: 1;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+#mobileMenu.hidden {
+  display: flex; /* overridden by max-height animation instead of display:none */
+}
+#menuToggle i {
+  transition: transform 0.3s ease;
+}
+#menuToggle.open i {
+  transform: rotate(90deg);
+}
+
 /* Buttons shared */
 .btn-outline {
   border: 2px solid white;
@@ -147,6 +254,10 @@ h1, h2, h3, .serif {
   font-weight: 600;
   transition: all 0.3s;
 }
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
 .btn-outline.dark {
   border-color: #1e293b;
   color: #1e293b;
@@ -154,6 +265,27 @@ h1, h2, h3, .serif {
 .btn-outline.dark:hover {
   background: #1e293b;
   color: white;
+}
+.btn-primary,
+.btn-outline {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::before,
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform: translateX(-120%) skewX(-15deg);
+  pointer-events: none;
+}
+.btn-primary:hover::before,
+.btn-outline:hover::before {
+  animation: shimmerSweep 0.9s ease;
 }
 .btn-primary {
   background: #1e3a8a;
@@ -171,6 +303,10 @@ h1, h2, h3, .serif {
   background: #15306a;
   transform: translateY(-3px);
   box-shadow: 0 15px 30px rgba(30, 64, 175, 0.25);
+}
+.btn-primary:active,
+.btn-outline:active {
+  transform: scale(0.97);
 }
 
 /* ---------- MODERN CARD (base) ---------- */
@@ -456,9 +592,11 @@ h1, h2, h3, .serif {
   background-position: center;
   transition: opacity 1.2s ease;
   opacity: 0;
+  transform: scale(1);
 }
 .hero-slide.active {
   opacity: 1;
+  animation: kenBurns 8s ease-out forwards;
 }
 .hero-overlay {
   background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,20,60,0.5) 50%, rgba(0,0,0,0.6) 100%);
@@ -466,6 +604,12 @@ h1, h2, h3, .serif {
 .counter {
   font-size: inherit;
   font-weight: inherit;
+}
+
+/* Use the small-viewport-safe unit so mobile browser chrome doesn't clip the hero */
+.h-screen {
+  height: 100vh;
+  height: 100dvh;
 }
 
 /* ---------- NOTICE MODAL (index) ---------- */
@@ -603,9 +747,6 @@ h1, h2, h3, .serif {
 
 /* ---------- RESPONSIVE / MOBILE OVERRIDES (merged) ---------- */
 @media (max-width: 640px) {
-  .navbar {
-    top: 32px !important;
-  }
   .top-contact-bar {
     font-size: 0.7rem;
     padding: 0.5rem 0.75rem;
@@ -651,6 +792,38 @@ h1, h2, h3, .serif {
     width: 44px;
     height: 44px;
   }
+}
+
+/* ---------- TABLET RANGE (641px – 1024px): iPad / mid-size preview fixes ---------- */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .app-card {
+    max-width: 640px;
+    padding: 2.4rem 2rem;
+  }
+  .team-tab {
+    padding: 0.55rem 1.4rem;
+    font-size: 0.92rem;
+  }
+  .modern-card,
+  .team-card,
+  .faq-item {
+    padding: 1.6rem;
+  }
+  #tabsContainer {
+    top: var(--site-header-h);
+  }
+  .store-btn {
+    min-width: 200px;
+    padding: 0.9rem 1.8rem;
+  }
+  .notice-image-wrapper img {
+    max-width: 80vw;
+  }
+}
+
+/* Ensure fixed/sticky headers track the real (JS-measured) header height on all sizes */
+#tabsContainer {
+  top: var(--site-header-h);
 }
 
   /* ensure app download section is responsive and looks polished */
