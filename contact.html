@@ -4,13 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="description" content="Contact Kinder Garden Academy – a modern international school in Sanfehatbazzar, Achham, Nepal. Reach out via phone, email, or visit us." />
-  <title>Contact Us - Kinder Garden Academy </title>
+  <meta name="keywords" content="Kinder Garden Academy contact, Achham school address, Kinder Garden Academy phone number, school contact Nepal" />
+  <meta name="author" content="Kinder Garden Academy" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#1e3a8a" />
+  <link rel="canonical" href="https://www.kindergardenacademy.edu.np/contact.html" />
+  <link rel="icon" href="Image/Logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="Image/Logo.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kinder Garden Academy" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://www.kindergardenacademy.edu.np/contact.html" />
+  <meta property="og:title" content="Contact Us - Kinder Garden Academy" />
+  <meta property="og:description" content="Reach Kinder Garden Academy in Sanfehatbazzar-03, Achham, Nepal by phone, email, or in person." />
+  <meta property="og:image" content="https://www.kindergardenacademy.edu.np/Image/Logo.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact Us - Kinder Garden Academy" />
+  <meta name="twitter:description" content="Reach Kinder Garden Academy in Sanfehatbazzar-03, Achham, Nepal." />
+  <meta name="twitter:image" content="https://www.kindergardenacademy.edu.np/Image/Logo.png" />
+
+  <title>Contact Us - Kinder Garden Academy</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
  
 <link rel="stylesheet" href="style.css">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.kindergardenacademy.edu.np/#school",
+  "name": "Kinder Garden Academy",
+  "image": "https://www.kindergardenacademy.edu.np/Image/Logo.png",
+  "url": "https://www.kindergardenacademy.edu.np/contact.html",
+  "telephone": "+977-097-625139",
+  "email": "info@kindergardenacademy.edu.np",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Sanfehatbazzar-03",
+    "addressLocality": "Achham",
+    "addressRegion": "Sudurpashchim Province",
+    "addressCountry": "NP"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "09:30",
+    "closes": "16:00"
+  }
+}
+</script>
 
 </head>
 <body>
@@ -52,7 +98,8 @@
         <a href="programs.html" class="nav-link text-white/90 hover:text-white font-medium transition-colors duration-300">Programs</a>
         <a href="teams.html" class="nav-link text-white/90 hover:text-white font-medium transition-colors duration-300">Our Team</a>
         <a href="gallery.html" class="nav-link text-white/90 hover:text-white font-medium transition-colors duration-300">Gallery</a>
-        <a href="faqs.html" class="nav-link text-white/90 hover:text-white font-medium transition-colors duration-300">FAQs</a>
+        <a href="alumni.html" class="nav-link text-white/90 hover:text-white font-medium transition-colors duration-300">Alumni</a>
+<a href="faqs.html" class="nav-link text-white/90 hover:text-white font-medium transition-colors duration-300">FAQs</a>
       </div>
       <div class="hidden md:flex items-center gap-4">
         <a href="https://edigitalnepal.com/sms/login/?team_id=1610" id="loginBtn" class="btn-outline text-sm py-2.5 px-6 transition-all duration-300">Login</a>
@@ -68,6 +115,7 @@
       <a href="teams.html" class="block py-2 px-3 rounded-lg hover:bg-blue-50 transition">Our Team</a>
       <a href="gallery.html" class="block py-2 px-3 rounded-lg hover:bg-blue-50 transition">Gallery</a>
       <a href="faqs.html" class="block py-2 px-3 rounded-lg hover:bg-blue-50 transition">FAQs</a>
+      <a href="alumni.html" class="block py-2 px-3 rounded-lg hover:bg-blue-50 transition">Alumni</a>
       <div class="flex gap-3 pt-2">
         <a href="https://edigitalnepal.com/sms/login/?team_id=1610" class="flex-1 text-center bg-blue-900 text-white py-2 rounded-full">Login</a>
       </div>
@@ -112,24 +160,24 @@
           <div class="grid sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-1.5">Full Name *</label>
-              <input type="text" required class="input-field" placeholder="Enter your name">
+              <input type="text" name="fullName" autocomplete="name" required class="input-field" placeholder="Enter your name">
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-1.5">Email Address *</label>
-              <input type="email" required class="input-field" placeholder="your@email.com">
+              <input type="email" name="email" autocomplete="email" required class="input-field" placeholder="your@email.com">
             </div>
           </div>
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-1.5">Phone Number</label>
-            <input type="tel" class="input-field" placeholder="+977 98...">
+            <input type="tel" name="phone" autocomplete="tel" class="input-field" placeholder="+977 98...">
           </div>
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-1.5">Subject *</label>
-            <input type="text" required class="input-field" placeholder="How can we help?">
+            <input type="text" name="subject" required class="input-field" placeholder="How can we help?">
           </div>
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-1.5">Message *</label>
-            <textarea rows="5" required class="input-field" placeholder="Type your message here..."></textarea>
+            <textarea rows="5" name="message" required class="input-field" placeholder="Type your message here..."></textarea>
           </div>
           <button type="submit" class="w-full bg-gradient-to-r from-blue-800 to-indigo-800 text-white font-semibold py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.02] active:scale-95">
             Send Message <i class="fas fa-paper-plane ml-2"></i>
@@ -203,7 +251,7 @@
 
   <!-- Footer with linked Sudeep Pandit (matching index style) -->
   <footer class="footer-gradient pt-20 pb-10 px-6">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
           <img src="Image/Logo.png" class="w-10 h-10" alt="Logo">
@@ -245,33 +293,10 @@
     </div>
 
 
- <!-- ========== NEW: SCHOOL APP DOWNLOAD SECTION (PLAYSTORE ICON + LINK) ========== -->
-    <div class="max-w-7xl mx-auto px-6 mt-14 mb-6">
-      <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-5 md:p-6 border border-white/15 shadow-lg flex flex-col md:flex-row justify-between items-center gap-6 transition-all duration-300 hover:bg-white/10">
-        <div class="flex items-center gap-4">
-          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-md">
-            <i class="fas fa-mobile-alt text-white text-2xl"></i>
-          </div>
-          <div>
-            <h3 class="text-white font-bold text-xl tracking-tight"> Download Our School App</h3>
-            <p class="text-blue-100 text-sm mt-1 max-w-md">Get real-time updates, results, notices & events — everything at your fingertips.</p>
-          </div>
-        </div>
-        <a href="https://play.google.com/store/apps/details?id=com.edigitalnepal.kindergarden" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="inline-flex items-center gap-3 bg-black/40 hover:bg-black/60 border border-white/30 text-white font-semibold py-3 px-7 rounded-full transition-all duration-300 transform hover:scale-105 group shadow-lg">
-          <i class="fab fa-google-play text-2xl group-hover:animate-pulse"></i>
-          <span class="text-base tracking-wide">GET IT ON <span class="font-bold">Google Play</span></span>
-          <i class="fas fa-arrow-right text-sm opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition"></i>
-        </a>
-      </div>
-      <!-- Optional note: replace the Play Store URL with your actual school app link -->
-    </div>
-    <!-- ========== END OF APP DOWNLOAD SECTION ========== -->
+ 
 
     <div class="border-t border-gray-700 mt-12 pt-6 text-center text-gray-500 text-sm">
-      <p>© 2025 Kinder Garden Academy · Designed with ❤️ by 
+      <p>© <span class="copyright-year">2026</span> Kinder Garden Academy · Designed with ❤️ by 
         <a href="https://sudeeppandit.com.np" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 hover:underline transition duration-200 font-medium">Sudeep Pandit</a>
       </p>
     </div>

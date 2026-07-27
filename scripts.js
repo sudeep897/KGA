@@ -296,6 +296,30 @@
     });
   });
 
+  // ---------- NOTICES & DOWNLOADS (index page) ----------
+  // Tags any notice-card dated within the last 30 days as "NEW" (via CSS ::after ribbon)
+  // and rewrites the raw ISO date into a friendlier display format.
+  const noticeCards = document.querySelectorAll('.notice-card[data-date]');
+  if (noticeCards.length) {
+    const now = new Date();
+    const msPerDay = 1000 * 60 * 60 * 24;
+    const dateFormatter = new Intl.DateTimeFormat('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
+
+    noticeCards.forEach(card => {
+      const raw = card.dataset.date;
+      const parsed = new Date(raw);
+      if (isNaN(parsed)) return;
+
+      const ageDays = (now - parsed) / msPerDay;
+      if (ageDays >= 0 && ageDays <= 30) {
+        card.classList.add('is-new');
+      }
+
+      const dateEl = card.querySelector('.notice-date');
+      if (dateEl) dateEl.textContent = dateFormatter.format(parsed);
+    });
+  }
+
   // ---------- CONTACT PAGE ----------
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {

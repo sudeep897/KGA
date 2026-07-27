@@ -881,7 +881,7 @@ h1, h2, h3, .serif {
     color: #fff;
 }
 
-.app-header h1 {
+.app-header h2 {
     font-size: 2.4rem;
     font-weight: 700;
     color: #0b1e33;
@@ -890,7 +890,7 @@ h1, h2, h3, .serif {
     font-family: 'Playfair Display', serif; /* match site font */
 }
 
-.app-header h1 span {
+.app-header h2 span {
     background: linear-gradient(135deg, #1a73e8, #0d47a1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1020,7 +1020,7 @@ h1, h2, h3, .serif {
         border-radius: 32px;
     }
 
-    .app-header h1 {
+    .app-header h2 {
         font-size: 1.8rem;
     }
 
@@ -1057,7 +1057,7 @@ h1, h2, h3, .serif {
     .app-header .icon-wrapper i {
         font-size: 2.4rem;
     }
-    .app-header h1 {
+    .app-header h2 {
         font-size: 1.5rem;
     }
 }
